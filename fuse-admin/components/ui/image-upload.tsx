@@ -13,6 +13,7 @@ interface ImageUploadProps {
   onRemove: (value: string) => void;
   // Array of image URLs
   value: string[];
+  buttonLabel: string;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
@@ -20,6 +21,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   onChange,
   onRemove,
   value,
+  buttonLabel = "Upload an Image",
 }) => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -77,7 +79,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               onClick={onClick}
             >
               <ImagePlus className="mr-2 h-4 w-4" />
-              Upload an Image
+              {buttonLabel}
             </Button>
           );
         }}
